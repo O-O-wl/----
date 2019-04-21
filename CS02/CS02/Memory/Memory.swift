@@ -1,24 +1,16 @@
-//
-//  Memory.swift
-//  CS02
-//
-//  Created by 이동영 on 18/04/2019.
-//  Copyright © 2019 부엉이. All rights reserved.
-//
-
 import Foundation
 
 class Memory{
     
     enum Exception:Error{
         case OUT_OF_RANGE
-        case NULL_POINT_ACCEPTION
+        case NULL_POINT
     }
     
     
-    var PROGRAM_TEXT = [Int16]()
-    var PROGRAM_HEAP = [Int16]()
-
+    var PROGRAM_TEXT = [Int16?].init(repeating: nil, count: 65535)
+    var PROGRAM_HEAP = [Int16?].init(repeating: nil, count: 65535)
+    
     enum RangeOfMemory:Int32,CaseIterable{
         case program_text = 0x0000 // 65535
         case program_heap = 0x10000 //131071
@@ -37,7 +29,7 @@ class Memory{
         static func  include(_ address:Int32) -> (RangeOfMemory){
             var area : RangeOfMemory = .end
             _ = RangeOfMemory.allCases.map{
-                 memory in
+                memory in
                 if memory.getRange().contains(address) {
                     area = memory
                 }
@@ -60,12 +52,11 @@ class Memory{
         }
     }
     
- 
+    
     func fetch(program_count:Int16) throws ->(Int16){
         //  TEXT 영역에서 program_count 번째에 위치한 인스트럭션Instruction 명령어(16비트)를 리턴한다.
-        
         guard let instruction : Int16 = self.PROGRAM_TEXT[Int(program_count)] else {
-            throw Exception.NULL_POINT_ACCEPTION
+            throw Exception.NULL_POINT
         }
         return instruction
     }
@@ -81,9 +72,7 @@ class Memory{
     
     func load(address:Int16) throws ->Int16{
         //  PROGRAM_HEAP 영역에서 0x10000 + address 주소에 있는 메모리 값을 리턴한다.
-        guard let data : Int16 = self.PROGRAM_HEAP[Int(address)] else {
-            throw Exception.NULL_POINT_ACCEPTION
-        }
+        guard let data:Int16 = PROGRAM_HEAP[Int(address)] else { throw Exception.NULL_POINT}
         return data
     }
     func store(address:Int16,data:Int16){
@@ -92,4 +81,3 @@ class Memory{
     }
     
 }
-
