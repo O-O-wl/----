@@ -1,3 +1,7 @@
+
+import Foundation
+
+
 let test2bit = [(false,false),(false,true),(true,false),(true,true)]
 
 var test3bit = [(Bool,Bool,Bool)]()
@@ -113,4 +117,49 @@ let byteA =  [true,true,true,false,true]
 let byteB =  [true,true,true,false,true]
 
 
-print(byteadder(byteA, byteB))
+//print(byteadder(byteA, byteB))
+
+
+func dec2bin(_ decimal:Int) -> [Bool] {
+    
+    var byte = [Bool]()
+    
+    var operandFront = decimal
+    let oprandBack = 2
+    
+    while(operandFront >= oprandBack){
+        let mod = operandFront % oprandBack == 1 ? true : false
+        byte.append(mod)
+        operandFront = operandFront/oprandBack
+    }
+    if(operandFront == 1){
+        byte.append(true)
+    }
+    
+    return byte
+}
+
+
+
+func bin2dec(_ bin:[Bool]) -> Int {
+    
+    var result = 0
+    
+    for (index,bit) in bin.enumerated() {
+        
+        if(bit){
+            result = result +  Int.init(NSDecimalNumber.init(decimal:  pow(2, index)).doubleValue)
+        }
+        
+    }
+    
+    
+    return result
+}
+
+
+
+var bin = dec2bin(23)
+print(bin)
+var dec = bin2dec(bin)
+print(dec)
