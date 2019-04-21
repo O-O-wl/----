@@ -10,4 +10,13 @@ import Foundation
 
 struct CU{
     
+    
+    func decode(_ byte:Int16) throws ->(IR){
+        guard let instruction = IR.init(rawValue: byte) else {
+            throw Exception.FAIL_DECODING
+        }
+        return instruction
+    }
+    
+  
 }

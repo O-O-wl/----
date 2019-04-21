@@ -15,6 +15,8 @@
 		0E4C4558226CA5F10039AB50 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4C4557226CA5F10039AB50 /* Register.swift */; };
 		0E4C4562226CA7A40039AB50 /* CS02Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4C4561226CA7A40039AB50 /* CS02Tests.swift */; };
 		0E4C4567226CA7AC0039AB50 /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E473CC222678C3D0067980B /* Memory.swift */; };
+		0E4C4569226CC1E30039AB50 /* IR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4C4568226CC1E30039AB50 /* IR.swift */; };
+		0E4C456B226CC2260039AB50 /* Exception.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4C456A226CC2260039AB50 /* Exception.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +42,8 @@
 		0E4C455F226CA7A40039AB50 /* CS02Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CS02Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4C4561226CA7A40039AB50 /* CS02Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CS02Tests.swift; sourceTree = "<group>"; };
 		0E4C4563226CA7A40039AB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E4C4568226CC1E30039AB50 /* IR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IR.swift; sourceTree = "<group>"; };
+		0E4C456A226CC2260039AB50 /* Exception.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exception.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		0E473CBA22678C240067980B /* CS02 */ = {
 			isa = PBXGroup;
 			children = (
+				0E4C456A226CC2260039AB50 /* Exception.swift */,
 				0E4C455A226CA61D0039AB50 /* CPU */,
 				0E4C4559226CA60D0039AB50 /* Memory */,
 				0E473CBB22678C240067980B /* main.swift */,
@@ -103,6 +108,7 @@
 				0E4C4553226CA2CF0039AB50 /* ALU.swift */,
 				0E4C4555226CA5E00039AB50 /* CU.swift */,
 				0E4C4557226CA5F10039AB50 /* Register.swift */,
+				0E4C4568226CC1E30039AB50 /* IR.swift */,
 			);
 			path = CPU;
 			sourceTree = "<group>";
@@ -205,9 +211,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E4C4558226CA5F10039AB50 /* Register.swift in Sources */,
+				0E4C456B226CC2260039AB50 /* Exception.swift in Sources */,
 				0E473CC322678C3D0067980B /* Memory.swift in Sources */,
 				0E4C4552226C9E640039AB50 /* CPU.swift in Sources */,
 				0E4C4554226CA2CF0039AB50 /* ALU.swift in Sources */,
+				0E4C4569226CC1E30039AB50 /* IR.swift in Sources */,
 				0E4C4556226CA5E00039AB50 /* CU.swift in Sources */,
 				0E473CBC22678C240067980B /* main.swift in Sources */,
 			);

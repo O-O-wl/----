@@ -1,13 +1,7 @@
 import Foundation
 
 class Memory{
-    
-    enum Exception:Error{
-        case OUT_OF_RANGE
-        case NULL_POINT
-    }
-    
-    
+  
     var PROGRAM_TEXT = [Int16?].init(repeating: nil, count: 65535)
     var PROGRAM_HEAP = [Int16?].init(repeating: nil, count: 65535)
     
