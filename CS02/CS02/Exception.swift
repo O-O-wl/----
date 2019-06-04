@@ -6,10 +6,8 @@
 //  Copyright © 2019 부엉이. All rights reserved.
 //
 
-import Foundation
 
-
-enum Exception:Error{
+public enum Exception:Error{
     case OUT_OF_RANGE
     case NULL_POINT
     case FAIL_DECODING

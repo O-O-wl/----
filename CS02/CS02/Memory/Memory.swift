@@ -1,6 +1,6 @@
 import Foundation
 
-class Memory{
+public class Memory{
   
     var PROGRAM_TEXT = [Int16?].init(repeating: nil, count: 65535)
     var PROGRAM_HEAP = [Int16?].init(repeating: nil, count: 65535)
